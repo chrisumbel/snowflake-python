@@ -3,6 +3,8 @@ FROM python:3.10-bullseye
 RUN apt-get update -y
 RUN apt-get install -y libssl-dev libopenlibm-dev
 RUN pip install --upgrade snowflake-connector-python
+RUN pip install "snowflake-connector-python[pandas]"
+
 
 RUN mkdir /snowflake
 WORKDIR /snowflake
